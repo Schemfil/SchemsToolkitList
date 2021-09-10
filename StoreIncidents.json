@@ -131,6 +131,11 @@
 		"karmatype": "Neutral"
 	},
 	{
+		"abr": "maninblack",
+		"price": 1350,
+		"karmatype": "Good"
+	},
+	{
 		"abr": "madanimal",
 		"price": 200,
 		"karmatype": "Bad"
@@ -187,12 +192,12 @@
 	},
 	{
 		"abr": "skillincrease",
-		"price": 400,
+		"price": 200,
 		"karmatype": "Good"
 	},
 	{
 		"abr": "party",
-		"price": 200,
+		"price": 400,
 		"karmatype": "Good"
 	},
 	{
@@ -212,12 +217,12 @@
 	},
 	{
 		"abr": "militaryaid",
-		"price": 2000,
+		"price": 700,
 		"karmatype": "Good"
 	},
 	{
 		"abr": "raid",
-		"price": 500,
+		"price": 1500,
 		"karmatype": "Bad"
 	},
 	{
@@ -227,7 +232,7 @@
 	},
 	{
 		"abr": "sapperraid",
-		"price": 1000,
+		"price": 1500,
 		"karmatype": "Bad"
 	},
 	{
@@ -247,7 +252,7 @@
 	},
 	{
 		"abr": "manhunterpack",
-		"price": 1000,
+		"price": 1500,
 		"karmatype": "Bad"
 	},
 	{
@@ -262,12 +267,12 @@
 	},
 	{
 		"abr": "disease",
-		"price": 1500,
+		"price": 1000,
 		"karmatype": "Bad"
 	},
 	{
 		"abr": "reviveanypawn",
-		"price": 4000,
+		"price": 1200,
 		"karmatype": "Good"
 	},
 	{
@@ -277,16 +282,11 @@
 	},
 	{
 		"abr": "levelskill",
-		"price": 50,
+		"price": 1500,
 		"karmatype": "Good"
 	},
 	{
 		"abr": "trait",
-		"price": 1,
-		"karmatype": "Good"
-	},
-	{
-		"abr": "removetrait",
 		"price": 1,
 		"karmatype": "Good"
 	},
@@ -311,38 +311,38 @@
 		"karmatype": "Good"
 	},
 	{
-		"abr": "vote",
-		"price": 100,
+		"abr": "hodlbotvote",
+		"price": 600,
 		"karmatype": "Neutral"
 	},
 	{
 		"abr": "reviveall",
-		"price": 20000,
+		"price": 22664,
 		"karmatype": "Good"
 	},
 	{
 		"abr": "reviveme",
-		"price": 6000,
+		"price": 2833,
 		"karmatype": "Good"
 	},
 	{
-		"abr": "healoneall",
-		"price": 1500,
+		"abr": "healall",
+		"price": 17336,
 		"karmatype": "Good"
 	},
 	{
-		"abr": "randomheal",
+		"abr": "healanypawn",
 		"price": 2000,
 		"karmatype": "Good"
 	},
 	{
-		"abr": "healone",
-		"price": 200,
+		"abr": "healme",
+		"price": 2167,
 		"karmatype": "Good"
 	},
 	{
 		"abr": "passionshuffle",
-		"price": 1000,
+		"price": 2000,
 		"karmatype": "Neutral"
 	},
 	{
@@ -352,13 +352,13 @@
 	},
 	{
 		"abr": "passion",
-		"price": 5000,
+		"price": 7000,
 		"karmatype": "Good"
 	},
 	{
 		"abr": "removepassion",
 		"price": 5000,
-		"karmatype": "Bad"
+		"karmatype": "Neutral"
 	},
 	{
 		"abr": "backpack",
@@ -377,9 +377,9 @@
 	},
 	{
 		"abr": "sanctuary",
-		"price": 40000,
+		"price": 100000,
 		"karmatype": "Good"
 	}
 	],
-	"total": 75
+	"total": 76
 }
