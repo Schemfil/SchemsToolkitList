@@ -14,6 +14,7 @@
     <script type="text/javascript">
         const itemListURL = "https://raw.githubusercontent.com/Schemfil/SchemsToolkitList/master/StoreItems.json";
         const eventListURL = "https://raw.githubusercontent.com/Schemfil/SchemsToolkitList/master/StoreIncidents.json";
+		const traitListURL = "https://raw.githubusercontent.com/Schemfil/SchemsToolkitList/master/ShopExt.json";
     </script>
 </head>
 
@@ -41,8 +42,8 @@
                 <p><strong>Die Basis-Kommandos:</strong></p>
                 <ul class="list-group">
                     <li class="list-group-item">!bal - Kontostand und Karma abfragen</li>
-                    <li class="list-group-item">!buy - Syntax: !buy [Itemname / Eventname] [Anzahl / Wert] - [Anzahl] Items oder Event im Wert von [Wert] Coins kaufen</li>
-					<li class="list-group-item">!lookup - Syntax: !lookup [item / event / trait / skill / disease] Suchtext - Sucht nach Treffern zu einem bestimmten Suchtext innerhalb von Items/Events/Traits/Skills/Krankheiten je nach Vorgabe</li>
+                    <li class="list-group-item">!buy - Syntax: !buy [<b>Itemname</b> / <b>Eventname</b>] [<b>Anzahl</b> / <b>Wert</b>] - <b>Anzahl</b> Items oder Event für <b>Wert</b> Coins kaufen</li>
+					<li class="list-group-item">!lookup - Syntax: !lookup [<b>item</b> / <b>event</b> / <b>trait</b> / <b>skill</b> / <b>disease</b>] [<b>Suchtext</b>] - Sucht nach Treffern zu einem bestimmten <b>Suchtext</b> innerhalb von <b>Items</b>/<b>Events</b>/<b>Traits</b>/<b>Skills</b>/<b>Krankheiten</b> je nach Vorgabe</li>
                 </ul>
 				<p></p>
 				<p><strong>Für euren eigenen Pawn:</strong></p>
@@ -50,12 +51,12 @@
 					<li class="list-group-item">!buy pawn - Fügt der Kolonie einen Pawn hinzu, der dem Käufer gehört</li>
 					<li class="list-group-item">!mypawnstory - Zeigt Infos zur Hintergrundgeschichte deines Pawns</li>
                     <li class="list-group-item">!mypawnskills - Zeigt Infos zu den Skills deines Pawns</li>
-					<li class="list-group-item">!buy levelskill [Skillname] [Punkte] - Levelt den angegebenen Skill für den angegebenen Punktwert</li>
+					<li class="list-group-item">!buy levelskill [<b>Skillname</b>] [<b>Coins</b>] - Levelt den angegebenen <b>Skill</b> für die angegebenen <b>Coins</b></li>
 					<li class="list-group-item">!buy reviveme - Belebt den eigenen Kolonisten wieder</li>
-					<li class="list-group-item">!buy trait [Traitname] - Fügt dem Pawn den gewählten Trait hinzu (max. 4 Traits pro Pawn!)</li>
-					<li class="list-group-item">!buy trait [Traitname] - Fügt dem Pawn den gewählten Trait hinzu (max. 4 Traits pro Pawn!)</li>
-					<li class="list-group-item">!buy removetrait [Traitname] - Entfernt den gewählten Trait vom Pawn.</li>
-					<li class="list-group-item">!buy replacetrait [Traitname-Weg] [Traitname-Dazu] - Tauscht [Traitname-Weg] gegen [Traitname-Dazu] auf seinem Pawn aus.</li>
+					<li class="list-group-item">!buy trait [<b>Traitname</b>] - Fügt dem Pawn den gewählten <b>Trait</b> hinzu (max. 4 Traits pro Pawn!)</li>
+					<li class="list-group-item">!buy trait [<b>Traitname</b>] - Fügt dem Pawn den gewählten <b>Trait</b> hinzu (max. 4 Traits pro Pawn!)</li>
+					<li class="list-group-item">!buy removetrait [<b>Traitname</b>] - Entfernt den gewählten <b>Trait</b> vom Pawn.</li>
+					<li class="list-group-item">!buy replacetrait [<b>Traitname-Weg</b>] [<b>Traitname-Dazu</b>] - Tauscht [<b>Traitname-Weg</b>] gegen [<b>Traitname-Dazu</b>] auf seinem Pawn aus.</li>
                 </ul>
 				<p></p>
 				<p><strong>Allgemeines Zeug:</strong></p>
@@ -79,6 +80,9 @@
                                     </button>
                                     <button class="btn btn-success" ng-class="{'active': (selected == '2')}" ng-click='selected=2'>
                                         Events
+                                    </button>
+									<button class="btn btn-success" ng-class="{'active': (selected == '3')}" ng-click='selected=3'>
+                                        Traits
                                     </button>
                                 </div>
                                 <div class="form-group row">
@@ -148,6 +152,29 @@
                                     <th scope="col" class="sort" data-sort="abr">Name</th>
                                     <th scope="col" class="sort" data-sort="price">Price</th>
                                     <th scope="col" class="sort" data-sort="karmatype">Karma</th>
+                                </tr>
+                                <tbody class="list">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" ng-show='selected == 3'>
+                    <div class="col-md-12">
+                        <div id="traits">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
+                                </div>
+                                <input type="text" class="form-control search" aria-label="Search" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                            <p></p>
+                            <table class="table traits">
+                                <tr>
+                                    <th scope="col" class="sort" data-sort="defName">Name</th>
+                                    <th scope="col" class="sort" data-sort="description">Description</th>
+                                    <th scope="col" class="sort" data-sort="addPrice">AddPrice</th>
+									<th scope="col" class="sort" data-sort="removePrice">RemovePrice</th>
                                 </tr>
                                 <tbody class="list">
                                 </tbody>
@@ -248,6 +275,20 @@
                 }
             });
             eventList = new List('events', options, eventData);
+        });
+		let traitList = null;
+        $.getJSON(traitListURL, function(data) {
+            var options = {
+                valueNames: ['defName', 'description', 'addPrice', 'removePrice'],
+                item: '<tr><td class="defName" scope="row"></td><td class="description"></td><td class="addPrice"></td><td class="removePrice"></td></tr>'
+            };
+            var traitData = [];
+            $.each(data.traits, function(index, value) {
+                if (value["addPrice"] > 0) {
+                    traitData.push(value);
+                }
+            });
+            traitList = new List('traits', options, traitData);
         });
         $("#item-price-min").keyup(function() {
             updateItemFilter();
